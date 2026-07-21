@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                echo 'Cloning the repo '
+                git url:"https://github.com/Sumedh0601/ProjectCICD.git",branch:"main"
+                
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building the docker image '
+                sh "docker build -t sumedhdmaodar0001/projectcicd:01 ."
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'deploying the application'
+                sh " docker run -it -d -p 9002:3000  sumedhdmaodar0001/projectcicd:01"
+            }
+        }
+         stage('Pushing to docker hub') {
+            steps {
+                echo 'Push'
+                withCredentials([usernamePassword(credentialsId: 'Dockerhub',
+                                                  usernameVariable: 'USER', 
+                                                  passwordVariable: 'PASSword')]){
+                    
+                    sh 'echo "$PASSword" | docker login -u "$USER" --password-stdin'
+                    sh 'docker push  sumedhdmaodar0001/projectcicd:01'
+                }
+            }
+        }
+  
+
+    }
+          post {
+    always {
+        mail to: 'cloudsumedh@gmail.com',
+             subject: 'Jenkins Build Finished',
+             body: 'The pipeline execution is complete.'
+    }
+}
+    
+}
