@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+End-to-End CI/CD Pipeline Automation Using Jenkins, Docker & AWS EC2
+Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Designed and implemented a complete End-to-End CI/CD pipeline that automates the software delivery lifecycle. The pipeline integrates GitHub, Jenkins, Docker, and AWS EC2 to automatically clone the source code, build a Docker image, push it to Docker Hub, deploy the application, and send email notifications using SMTP.
 
-## Available Scripts
+Technologies Used
+Jenkins
+Docker
+Docker Hub
+Git & GitHub
+AWS EC2 (Ubuntu)
+SMTP Email Notifications
+Linux
+Shell Scripting
+Jenkins Pipeline (Declarative)
+Project Workflow
+Developer pushes the latest code to GitHub.
+Jenkins Pipeline automatically triggers the build.
+Jenkins clones the repository from GitHub.
+The application is built successfully.
+A Docker image is created using the project's Dockerfile.
+Jenkins authenticates with Docker Hub.
+The Docker image is pushed to Docker Hub.
+The application is deployed as a Docker container on the EC2 instance.
+Jenkins sends success or failure notifications through SMTP email.
+Key Features
+Automated source code checkout from GitHub.
+Automated Docker image creation.
+Secure Docker Hub authentication using Jenkins Credentials.
+Automatic image push to Docker Hub.
+Containerized application deployment.
+SMTP email notifications for build success and failure.
+CI/CD pipeline built using Jenkins Declarative Pipeline.
+Hosted on AWS EC2 running Ubuntu Linux.
+Challenges Solved
+Configured Jenkins permissions to access the Docker daemon.
+Resolved Docker socket permission issues.
+Managed Docker Hub authentication using credentials.
+Fixed container port conflicts during deployment.
+Automated container deployment within the Jenkins pipeline.
+Integrated SMTP for real-time build notifications.
+Outcomes
+Reduced manual deployment effort through automation.
+Improved deployment consistency and reliability.
+Achieved faster release cycles with a fully automated CI/CD pipeline.
+Implemented secure credential management using Jenkins Credentials.
+Enabled continuous integration and continuous deployment with minimal manual intervention.
+Resume Version (ATS-Friendly)
 
-In the project directory, you can run:
+End-to-End CI/CD Pipeline Using Jenkins, Docker & AWS EC2
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Developed an automated CI/CD pipeline using Jenkins Declarative Pipeline.
+Integrated GitHub for automatic source code checkout.
+Built Docker images and pushed them securely to Docker Hub.
+Deployed containerized applications on AWS EC2 using Docker.
+Configured Jenkins Credentials for secure Docker Hub authentication.
+Implemented SMTP email notifications for build success and failure alerts.
+Automated the complete build, test, image creation, and deployment process.
+Troubleshot Docker permission issues, authentication errors, and deployment conflicts.
+Technologies: Jenkins, Docker, Docker Hub, GitHub, AWS EC2, Linux, Shell Scripting, SMTP.
